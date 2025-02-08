@@ -32,6 +32,7 @@ jobs:
       - name: Prepare files for Gist update
         id: prep
         run: |
+          touch resume.pdf \
           echo "Reading JSON file..."
           JSON_CONTENT=$(jq -c . resume.json)
           echo "Encoding PDF file..."
