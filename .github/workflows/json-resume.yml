@@ -20,7 +20,7 @@ jobs:
       - name: Install resume-cli globally
         run: npm install -g resume-cli
       - name: Install theme with legacy peer deps
-        run: cd $(pwd)/node_modules/json-theme-professional  && npm install jsonresume-theme-professional --legacy-peer-deps
+        run: npm install jsonresume-theme-professional --legacy-peer-deps
       - name: Check theme structure
         run: |
           echo "Listing theme folder contents:"
