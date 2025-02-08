@@ -22,7 +22,7 @@ jobs:
       - name: Install theme with legacy peer deps
         run: npm install jsonresume-theme-professional --legacy-peer-deps
       - name: list jsonresume-theme-professional files
-        run: ls -la /home/runner/work/uko-json-resume/uko-json-resume/node_modules/jsonresume-theme-professional/src
+        run: ls -la /home/runner/work/uko-json-resume/uko-json-resume/node_modules/jsonresume-theme-professional/src/ui
       - name: Check theme structure
         run: |
           echo "Listing theme folder contents:"
