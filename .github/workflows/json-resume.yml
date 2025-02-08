@@ -22,7 +22,7 @@ jobs:
       - name: Install theme with legacy peer deps
         run: npm install jsonresume-theme-professional --legacy-peer-deps
       - name: list jsonresume-theme-professional files
-        run: ls -la /home/runner/work/uko-json-resume/uko-json-resume/node_modules/jsonresume-theme-professional
+        run: ls -la /home/runner/work/uko-json-resume/uko-json-resume/node_modules/jsonresume-theme-professional/src
       - name: Check theme structure
         run: |
           echo "Listing theme folder contents:"
@@ -30,7 +30,7 @@ jobs:
           echo "Listing theme src folder contents:"
           ls -la node_modules/jsonresume-theme-professional/src
       - name: Generate PDF Resume
-        run: resume export resume.pdf --theme /home/runner/work/uko-json-resume/node_modules/jsonresume-theme-professional --resume resume.json
+        run: resume export resume.pdf --theme ./node_modules/jsonresume-theme-professional/src --resume resume.json
       - name: Prepare files for Gist update
         id: prep
         run: |
