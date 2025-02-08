@@ -54,4 +54,4 @@ jobs:
                 "resume.pdf": { content: $pdf }
               }
             }')" \
-            https://api.github.com/gists/e9fdd3e292ac7a3d11b0592c0bf2eb31
+            https://gist.github.com/malachi43/51c8c85804e98a02dd0271e3a857a313
