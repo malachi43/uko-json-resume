@@ -20,7 +20,7 @@ jobs:
       - name: Install resume-cli globally
         run: npm install -g resume-cli
       - name: Install theme with legacy peer deps
-        run: npm install jsonresume-theme-professional --legacy-peer-deps
+        run: npm install jsonresume-theme-professional --legacy-peer-deps && npm install jsonresume-theme-even --legacy-peer-deps
       - name: list jsonresume-theme-professional files
         run: ls -la /home/runner/work/uko-json-resume/uko-json-resume/node_modules/jsonresume-theme-professional/src/ui
       - name: Check theme structure
