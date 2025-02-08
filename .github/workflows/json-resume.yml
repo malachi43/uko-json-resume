@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
       - name: Install resume-cli globally
         run: npm install -g resume-cli
       - name: Install theme with legacy peer deps
@@ -30,7 +30,7 @@ jobs:
           echo "Listing theme src folder contents:"
           ls -la node_modules/jsonresume-theme-professional/src
       - name: Generate PDF Resume
-        run: resume export resume.pdf --theme ./node_modules/jsonresume-theme-professional/src --resume resume.json
+        run: resume export resume.pdf --theme even --resume resume.json
       - name: Prepare files for Gist update
         id: prep
         run: |
