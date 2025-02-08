@@ -46,7 +46,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -X PATCH \
-            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d "$(jq -n --arg json "$JSON_CONTENT" --arg pdf "$PDF_CONTENT" '{
               files: {
