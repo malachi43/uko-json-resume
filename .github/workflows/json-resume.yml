@@ -32,22 +32,25 @@ jobs:
       - name: Prepare files for Gist update
         id: prep
         run: |
+          echo "Reading JSON file..."
           JSON_CONTENT=$(jq -c . resume.json)
-          PDF_CONTENT=$(base64 -w 0 resume.pdf)
-          echo "::set-output name=json::$JSON_CONTENT"
-          echo "::set-output name=pdf::$PDF_CONTENT"
+          echo "Encoding PDF file..."
+          PDF_CONTENT=$(base64 resume.pdf | tr -d '\n')
+
+          echo "JSON_CONTENT=$JSON_CONTENT" >> $GITHUB_ENV
+          echo "PDF_CONTENT=$PDF_CONTENT" >> $GITHUB_ENV
         shell: bash
       - name: Update Gist with Resume and PDF
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: >
+        run: |
           curl -X PATCH \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "$(jq -n --arg json "${{ steps.prep.outputs.json }}" --arg pdf "${{ steps.prep.outputs.pdf }}" '{
+            -d "$(jq -n --arg json "$JSON_CONTENT" --arg pdf "$PDF_CONTENT" '{
               files: {
                 "resume.json": { content: $json },
                 "resume.pdf": { content: $pdf }
               }
             }')" \
-            https://api.github.com/gists/e9fdd3e292ac7a3d11b0592c0bf2eb31 
+            https://api.github.com/gists/e9fdd3e292ac7a3d11b0592c0bf2eb31
