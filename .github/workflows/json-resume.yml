@@ -43,7 +43,7 @@ jobs:
         shell: bash
       - name: Update Gist with Resume and PDF
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIST_PAT_TOKEN }}
         run: |
           curl -X PATCH \
             -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
