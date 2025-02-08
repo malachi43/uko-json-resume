@@ -44,14 +44,20 @@ jobs:
       - name: Update Gist with Resume and PDF
         env:
           GITHUB_TOKEN: ${{ secrets.GIST_PAT_TOKEN }}
-        run: |
+        run: >
           curl -X PATCH \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d "$(jq -n --arg json "$JSON_CONTENT" --arg pdf "$PDF_CONTENT" '{
-              files: {
-                "resume.json": { content: $json },
-                "resume.pdf": { content: $pdf }
-              }
-            }')" \
-            https://gist.github.com/malachi43/51c8c85804e98a02dd0271e3a857a313
+
+          -H "Authorization: Bearer $GITHUB_TOKEN" \
+           -H "Accept: application/vnd.github.v3+json" \
+          -H "Content-Type: application/json" \
+
+          -d "$(jq -n --arg json "${{ steps.prep.outputs.json }}" --arg pdf "${{ steps.prep.outputs.pdf }}" '{
+
+          files: {
+
+          "resume.json": { content: $json },
+
+          "resume.pdf": { content: $pdf }
+           }
+          }')" \
+              https://gist.github.com/malachi43/51c8c85804e98a02dd0271e3a857a313
