@@ -44,7 +44,7 @@ jobs:
       - name: Update Gist with Resume and PDF
         env:
           GITHUB_TOKEN: ${{ secrets.GIST_PAT_TOKEN }}
-        run: >
+        run: |
           curl -X PATCH \
           -c, --cookie-jar \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
