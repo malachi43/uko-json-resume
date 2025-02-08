@@ -46,13 +46,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GIST_PAT_TOKEN }}
         run: >
           curl -X PATCH \
-
+          -c, --cookie-jar \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
-           -H "Accept: application/vnd.github.v3+json" \
+          -H "Accept: application/vnd.github.v3+json" \
           -H "Content-Type: application/json" \
-
           -d "$(jq -n --arg json "${{ steps.prep.outputs.json }}" --arg pdf "${{ steps.prep.outputs.pdf }}" '{
-
           files: {
 
           "resume.json": { content: $json },
