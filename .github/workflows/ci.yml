@@ -1,0 +1,33 @@
+---
+name: Publish Resume & PDF
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+        run: npm install @jsonresume/jsonresume-to-rendercv@1.0.12
+      - name: install python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+        run: pip install "rendercv[full]"
+      - name: convert resume.json to resume.yaml
+        run: npx @jsonresume/jsonresume-to-rendercv resume.json
+      - name: convert resume.yaml to .pdf
+        run: rendercv render resume.yaml
+      - name: listing files in current directory
+        run: echo "Files in $(pwd) directory: "
+        run: ls -la
+      
