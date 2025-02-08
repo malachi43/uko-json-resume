@@ -1,0 +1,53 @@
+---
+name: Publish Resume & PDF
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install resume-cli globally
+        run: npm install -g resume-cli
+      - name: Install theme with legacy peer deps
+        run: npm install jsonresume-theme-professional --legacy-peer-deps
+      - name: Check theme structure
+        run: |
+          echo "Listing theme folder contents:"
+          ls -la node_modules/jsonresume-theme-professional
+          echo "Listing theme src folder contents:"
+          ls -la node_modules/jsonresume-theme-professional/src
+      - name: Generate PDF Resume
+        run: resume export resume.pdf --theme professional --resume resume.json
+      - name: Prepare files for Gist update
+        id: prep
+        run: |
+          JSON_CONTENT=$(jq -c . resume.json)
+          PDF_CONTENT=$(base64 -w 0 resume.pdf)
+          echo "::set-output name=json::$JSON_CONTENT"
+          echo "::set-output name=pdf::$PDF_CONTENT"
+        shell: bash
+      - name: Update Gist with Resume and PDF
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          curl -X PATCH \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$(jq -n --arg json "${{ steps.prep.outputs.json }}" --arg pdf "${{ steps.prep.outputs.pdf }}" '{
+              files: {
+                "resume.json": { content: $json },
+                "resume.pdf": { content: $pdf }
+              }
+            }')" \
+            https://api.github.com/gists/e9fdd3e292ac7a3d11b0592c0bf2eb31 
