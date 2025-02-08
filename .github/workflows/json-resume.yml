@@ -28,7 +28,7 @@ jobs:
           echo "Listing theme src folder contents:"
           ls -la node_modules/jsonresume-theme-professional/src
       - name: Generate PDF Resume
-        run: resume export resume.pdf --theme professional --resume resume.json
+        run: resume export resume.pdf --theme ./node_modules/jsonresume-theme-professional --resume resume.json
       - name: Prepare files for Gist update
         id: prep
         run: |
