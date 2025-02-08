@@ -28,6 +28,6 @@ jobs:
       - name: convert resume.yaml to .pdf
         run: rendercv render resume.yaml
       - name: listing files in current directory
-        run: echo "Files in $(pwd) directory: "
+        run: echo -e "Files in $(pwd) directory "
         run: ls -la
       
