@@ -32,10 +32,15 @@ jobs:
       - name: listing files in current directory
         run: ls -la
       - name: Commit changes
+      - name: Set up Git
         run: |
          git config --global user.name 'github-actions[bot]'
          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-         git add .
-         git commit -m "Move file to the present repository"
-         git push
+
+      - name: Push changes
+        run: |
+         git add resume.json
+         git commit -m "Move file to the present repository" || echo "No changes to commit"
+         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
       
