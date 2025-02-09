@@ -31,7 +31,6 @@ jobs:
         run: rendercv render resume.yaml
       - name: listing files in current directory
         run: ls -la
-      - name: Commit changes
       - name: Set up Git
         run: |
          git config --global user.name 'github-actions[bot]'
