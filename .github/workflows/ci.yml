@@ -38,8 +38,13 @@ jobs:
 
       - name: Push changes
         run: |
-         git add resume.json
+         git add -A resume.json
          git commit -m "Move file to the present repository" || echo "No changes to commit"
+
+      - name: Push changes
+        run: |
+         git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
+         git push origin main
          git push https://x-access-token:${{ secrets.GIST_PAT_TOKEN }}@github.com/${{ github.repository }}.git
 
       
