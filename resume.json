@@ -4,7 +4,7 @@
         "label": "Programmer",
         "image": "",
         "email": "john@gmail.com",
-        "phone": "(912) 555-4321",
+        "phone": "tel:(912) 555-4321",
         "url": "https://johndoe.com",
         "summary": "A summary of John Doe…",
         "location": {
@@ -14,7 +14,7 @@
             "countryCode": "US",
             "region": "California"
         },
-        "profiles": [
+        "socail_networks": [
             {
                 "network": "Twitter",
                 "username": "john",
@@ -78,15 +78,6 @@
             "url": "https://certificate.com"
         }
     ],
-    "publications": [
-        {
-            "name": "Publication",
-            "publisher": "Company",
-            "releaseDate": "2014-10-01",
-            "url": "https://publication.com",
-            "summary": "Description…"
-        }
-    ],
     "skills": [
         {
             "name": "Web Development",
@@ -130,5 +121,16 @@
             ],
             "url": "https://project.com/"
         }
-    ]
+    ],
+    "sections": {
+        "publications": [
+            {
+                "authors": "Publication",
+                "publisher": "Company",
+                "releaseDate": "2014-10-01",
+                "url": "https://publication.com",
+                "summary": "Description…"
+            }
+        ]
+    }
 }
