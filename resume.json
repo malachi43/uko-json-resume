@@ -49,15 +49,10 @@
     ],
     "volunteer": [
         {
-            "organization": "Organization",
+            "organization": "TRUPAY",
             "position": "Backend Developer",
-            "website": "http://organization.com/",
-            "startDate": "2012-01-01",
-            "endDate": "2013-01-01",
-            "summary": "Description...",
-            "highlights": [
-                "Awarded 'Volunteer of the Month'"
-            ]
+            "startDate": "2025-01-03",
+            "summary": "TRUPAY is a user-friendly, secure, and efficient platform designed to simplify the process of purchasing textbooks for students. By eliminating the need for long bank queues, students can browse, pay for, and track their textbook purchases online with ease."
         }
     ],
     "education": [
@@ -67,11 +62,7 @@
             "studyType": "Bachelor",
             "startDate": "2016-01-01",
             "endDate": "2021-11-22",
-            "gpa": "4.19",
-            "courses": [
-                "Semiconductor Devices",
-                "Operational Amplifiers (Op-Amps)"
-            ]
+            "gpa": "4.19"
         }
     ],
     "awards": [
@@ -85,11 +76,22 @@
     "skills": [
         {
             "name": "Web Development",
-            "level": "Expert",
+            "level": "master",
             "keywords": [
                 "HTML",
                 "CSS",
                 "Javascript"
+            ]
+        },
+        {
+            "name": "Backend Development",
+            "level": "intermediaate",
+            "keywords": [
+                "server",
+                "api",
+                "docker",
+                "cache",
+                "container"
             ]
         }
     ],
@@ -105,6 +107,14 @@
             "keywords": [
                 "Blur",
                 "Autofocus",
+                "Lens"
+            ]
+        },
+        {
+            "name": "travelling",
+            "keywords": [
+                "landscape",
+                "nature",
                 "Lens"
             ]
         }
