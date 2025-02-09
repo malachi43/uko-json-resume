@@ -20,9 +20,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GIST_URL: "https://gist.github.com/malachi43/51c8c85804e98a02dd0271e3a857a313"
-        run: |
-          curl -X PATCH \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/user \
-            -d "{\"bio\": \"resume_url: $GIST_URL\"}"
+      run: |
+        curl -X PATCH \
+        -H "Authorization: token $GITHUB_TOKEN" \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/user \
+        -d "{\"bio\": \"resume_url: $GIST_URL\"}"
