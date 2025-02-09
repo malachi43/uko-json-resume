@@ -31,4 +31,11 @@ jobs:
         run: rendercv render resume.yaml
       - name: listing files in current directory
         run: ls -la
+      - name: Commit changes
+        run: |
+         git config --global user.name 'malachi43'
+         git config --global user.email 'ukomalachi@gmail.com'
+         git add .
+         git commit -m "Move file to the present repository"
+         git push
       
