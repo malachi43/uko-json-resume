@@ -6,11 +6,11 @@
         "email": "ukomalachi@gmail.com",
         "phone": "07064726898",
         "website": "https://github.com/malachi43",
-        "summary": "Enthusiastic backend developer with a focus on building scalable and maintainable applications. Proficient in Node.js, Express.js, and MongoDB, with a strong foundation in JavaScript and TypeScript.  
-                  Experienced in Agile development practices and working collaboratively to deliver high-quality software solutions.Passionate about leveraging technology to innovate and create user-centric products.  
-                  Looking to contribute to dynamic teams focused on building modern and efficient web applications.","location": {
+        "summary": "Enthusiastic backend developer with a focus on building scalable and maintainable applications. Proficient in Node.js, Express.js, and MongoDB, with a strong foundation in JavaScript and TypeScript. Experienced in Agile development practices and working collaboratively to deliver high-quality software solutions.Passionate about leveraging technology to innovate and create user-centric products. Looking to contribute to dynamic teams focused on building modern and efficient web applications.",
+        "location": {
             "address": "No 1, Gbesu Jisu, Tori Lovi, off Age-Mowo, Lagos. Nigeria",
-            "postalCode": "100001,"city": "Lagos",
+            "postalCode": "100001",
+            "city": "Lagos",
             "countryCode": "NG",
             "region": "Age-Mowo"
         },
