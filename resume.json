@@ -24,11 +24,11 @@
     },
     "work": [
         {
-            "company": "Enoverlab",
+            "name": "Enoverlab",
             "position": "Frontend Developer Intern",
             "website": "https://enoverlab.com",
             "startDate": "2024-11-01",
-            "endDate": "2014-12-13",
+            "endDate": "2024-12-13",
             "summary": "collaborated with cross-functional teams(product managers, UI/UX designers, and developers) to design and develop a 6-week MVP for a blood donation platform",
             "highlights": [
                 "Focused on building user-centeric features",
@@ -36,7 +36,7 @@
             ]
         },
         {
-            "company": "Learnable",
+            "name": "Learnable",
             "position": "Backend Developer Intern",
             "website": "https://learnable.genesystechhub.com/",
             "startDate": "2022-01-01",
